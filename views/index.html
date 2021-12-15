@@ -70,14 +70,13 @@
 
     <script>
         let jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTBmMDllNmU4MjczNjY2MjczYjAxMjMxMWE3MDUwMmQzNzcyNDY5MWYyZGI2ZTc1Nzc2ZmI5NzQzYzJkNjMwY2Y0OWM2YmE4NjdjMTI5YTUiLCJpYXQiOjE2MzkzOTAyNzEuNDMyMzYsIm5iZiI6MTYzOTM5MDI3MS40MzIzNjMsImV4cCI6MTY3MDkyNjI3MS40MjkxNDEsInN1YiI6IjExODEiLCJzY29wZXMiOltdfQ.TwZm496HziOmHnIsucOfW0YLMY1oISo3s611TPBxWJJuS3CyPDinzt1SExozLgQQlXYYqGMOkqoKKLZKk5N-lzkOLTl-h_S-vNT6EJgenHpXkrt51OzzVKOTdptIyZKqlDZ6euQjcYztVKlBZbvJqp4yncfwG4r9htXTtei-GNTUBj6I0zjBTz9sRqUiiTh17qL6eAuR80D7Vsica4x6_NStBMVPOVCOMdCw8pv0Jd2H12WR7bSN5AcMNuLHMDbIqDPeUK0DJauO0jwUe-wImRxnxY6s1FGiQ9kI6k3IV8-uVgmfeeFCJY7GqCP1SRP5xQTPCa9AFcyQbtfxAiztT1lV0jZmFeUZjHHUGNtkXebYSmdcJKJKtN-rPAclVz0Y6Ttb7sze_gCvEgCPxrHaJi__lD0B2eglWkGFCDLnGXjQILAI-bm-ApIFI_ZcadbqOcCPU7QhLA91u9RByZvxd5ZuSkcaK1RkWYhlhtQy-vvIliUTZaBHVFJGjY8RUzKvD7wuqUUu4lMLuxG4vA56m0ytYO4IMKP6aMwRf77LQkpEPFHzbs1-KPmHmw3x0PLGE7d7Mq9HiZJvvuqs0u4KL2V4Q6_Hf0UqKn4fDAuE0_3qN5e-IQlP77X6Yi0m6MrkuXmf_g3-FmLgTmbnbuuWdihjJdNvIJ5XznrGhf7n9nw";
-        var socket = io("http://localhost:3000/", {
+        var socket = io("http://localhost:5000/", {
             "force new connection": true,
             "reconnectionAttempts": "Infinity",
             "timeout": 10001,
             "transports": ["websocket"],
             "auth": {
                 "token": jwt,
-                "id": 10
             },
         });
 

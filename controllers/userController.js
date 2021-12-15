@@ -2,8 +2,7 @@ const User = require('../models/User');
 const Chat = require('../models/Chat');
 
 exports.saveMessage = async(msg, recieverId, senderId) => {
-
-    await Chat.Chat.create({
+    await Chat.create({
         message: msg,
         senderId: senderId,
         recieverId: recieverId

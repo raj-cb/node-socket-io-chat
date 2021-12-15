@@ -17,4 +17,4 @@ const testConnection = async() => {
 
 testConnection();
 
-exports.default = sequelize;
+module.exports = sequelize;

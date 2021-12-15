@@ -1,10 +1,7 @@
 const { Sequelize, DataTypes, INTEGER } = require('sequelize');
-const sequelize = new Sequelize('expertez', 'root', '', {
-    host: 'localhost',
-    dialect: 'mysql'
-});
+const sequelize = require('../config');
 
-exports.Chat = sequelize.define('Chat', {
+const Chat = sequelize.define('Chat', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -34,4 +31,4 @@ exports.Chat = sequelize.define('Chat', {
 
 // sequelize.sync();
 
-// exports.default = Chat;
+module.exports = Chat;

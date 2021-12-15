@@ -1,8 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('expertez', 'root', '', {
-    host: 'localhost',
-    dialect: 'mysql'
-});
+const sequelize = require('../config');
 
 const User = sequelize.define('User', {
     id: {
@@ -122,4 +119,4 @@ const User = sequelize.define('User', {
     },
 });
 
-exports.default = User;
+module.exports = User;
