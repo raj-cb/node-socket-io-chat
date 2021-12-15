@@ -8,3 +8,12 @@ exports.saveMessage = async(msg, recieverId, senderId) => {
         recieverId: recieverId
     }).then(data => console.log(data));
 }
+
+exports.updateUserSession = async(userId, status) => {
+    await User.update({ socket_session: status }, { where: { id: userId } });
+}
+
+exports.checkUserSession = async(userId) => {
+    return User.findOne({ where: { id: parseInt(userId) }, attributes: ['socket_session'] })
+        .then(data => { console.log(data); return data.socket_session });
+}

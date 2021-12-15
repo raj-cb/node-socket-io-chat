@@ -117,6 +117,10 @@ const User = sequelize.define('User', {
     address_longitude: {
         type: DataTypes.DOUBLE
     },
-});
+    socket_session: {
+        type: DataTypes.BOOLEAN
+    },
+
+}, { timestamps: false });
 
 module.exports = User;

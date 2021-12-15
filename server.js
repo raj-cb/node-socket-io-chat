@@ -25,25 +25,32 @@ io.use(async(socket, next) => {
                 return next(new Error('Authentication error'));
             }
             socket.decoded = decoded;
-            console.log(decoded);
+            socket.receiverId = socket.handshake.auth.receiverId;
+            socket.senderId = socket.decoded.sub;
             next();
         });
     } else {
         next(new Error('Authentication error'));
     }
-}).on('connection', (socket) => {
+}).on('connection', async(socket) => {
 
-    socket.on('join-room', (data) => {
-        socket.receiverId = data.id;
-        socket.senderId = data.senderId;
+    await userController.updateUserSession(socket.decoded.sub, true);
+    let isRecieverOnline = await userController.checkUserSession(socket.receiverId);
+
+    socket.join(socket.senderId);
+    if (isRecieverOnline) {
         socket.join(socket.receiverId);
-        socket.join(data.senderId);
-        socket.emit('res', 'joined');
-    })
+        socket.emit('reciever online');
+    }
+
     socket.on('send message', msg => {
         userController.saveMessage(msg, socket.receiverId, socket.senderId);
         io.sockets.in([socket.receiverId, socket.senderId]).emit('recieve message', msg);
     });
+
+    socket.on('disconnecting', () => {
+        userController.updateUserSession(socket.decoded.sub, false);
+    })
 });
 
 app.post('/messages', (req, res) => {
