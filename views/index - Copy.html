@@ -69,7 +69,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js"></script>
 
     <script>
-        let jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTBmMDllNmU4MjczNjY2MjczYjAxMjMxMWE3MDUwMmQzNzcyNDY5MWYyZGI2ZTc1Nzc2ZmI5NzQzYzJkNjMwY2Y0OWM2YmE4NjdjMTI5YTUiLCJpYXQiOjE2MzkzOTAyNzEuNDMyMzYsIm5iZiI6MTYzOTM5MDI3MS40MzIzNjMsImV4cCI6MTY3MDkyNjI3MS40MjkxNDEsInN1YiI6IjExODEiLCJzY29wZXMiOltdfQ.TwZm496HziOmHnIsucOfW0YLMY1oISo3s611TPBxWJJuS3CyPDinzt1SExozLgQQlXYYqGMOkqoKKLZKk5N-lzkOLTl-h_S-vNT6EJgenHpXkrt51OzzVKOTdptIyZKqlDZ6euQjcYztVKlBZbvJqp4yncfwG4r9htXTtei-GNTUBj6I0zjBTz9sRqUiiTh17qL6eAuR80D7Vsica4x6_NStBMVPOVCOMdCw8pv0Jd2H12WR7bSN5AcMNuLHMDbIqDPeUK0DJauO0jwUe-wImRxnxY6s1FGiQ9kI6k3IV8-uVgmfeeFCJY7GqCP1SRP5xQTPCa9AFcyQbtfxAiztT1lV0jZmFeUZjHHUGNtkXebYSmdcJKJKtN-rPAclVz0Y6Ttb7sze_gCvEgCPxrHaJi__lD0B2eglWkGFCDLnGXjQILAI-bm-ApIFI_ZcadbqOcCPU7QhLA91u9RByZvxd5ZuSkcaK1RkWYhlhtQy-vvIliUTZaBHVFJGjY8RUzKvD7wuqUUu4lMLuxG4vA56m0ytYO4IMKP6aMwRf77LQkpEPFHzbs1-KPmHmw3x0PLGE7d7Mq9HiZJvvuqs0u4KL2V4Q6_Hf0UqKn4fDAuE0_3qN5e-IQlP77X6Yi0m6MrkuXmf_g3-FmLgTmbnbuuWdihjJdNvIJ5XznrGhf7n9nw";
+        let jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDE4NjhmOTE2M2JlYmQzYjJmMTNmOTkwMzhiNWNmMDc0MjdlMjFkNmYzMjIyZTFhODU2YzlmMGY4YzFhYzYzYWRkNjVhY2YwYjgxNjg3N2IiLCJpYXQiOjE2Mzc5MjA1MDYuNDcwMjQyLCJuYmYiOjE2Mzc5MjA1MDYuNDcwMjQ3LCJleHAiOjE2Njk0NTY1MDYuNDY0MTgyLCJzdWIiOiIxMTUzIiwic2NvcGVzIjpbXX0.Bqa6BWVN_XWEzcXdWJiMjrHkIUCNghQosYbbwx89dvyu4Dfk-pGFkGixSF7C64JhjZM9JWfU_wTpfFegzDU1LfOLr0pEOgnZWZ0rZtt6RUKkpHNhbDDcF5x1Ull5-C_qwoEpuAUkefur1aBTdY4BabQ9agDMRD-3JwUmVenWN1nCqRqdwPGTYDecjSfGCF7J4pm0sZ-Jyf3zYORuo4ifaEhv-aO_s7z3eZTObz5W1pcyQQ_3jua3X6ygreJDtfo3NFaB-Ay83Pm8iW5wotihhaKNc77otFbfsZwys-0sBCtyCZgPorYWbRuCnKQT9AiE5JDLn42ale9_mb2n6MEO8kUfjtZRUe6DN-M420QPOrweoZ8A_OW70ZNM6FRCP6FHqqhcVNYvXePwURPtpuv84FiPtR1cSAfB4JFBEMaq6vuIbVdRKA6zUJFintdSmBlfVZFWLaJPdqvxwnbfOKewUkQdSHvZLHbpqIS2atQ_Fecc4wbzUw38JCj2tUJ2dZlUGyBWgW7Us-gBbqqNDGytfM-SOiFentuYULR4N2PZ1iB3AFQxEQDrpuRZUQJdSty5SikdK-xRut3bDQmIbNlPWnTJUCyzSOWEsaM5uiYEXQTMwJVcEnlKEEnl_a5insjheloOJbh_zL1_62u3HC6T8lcA1uyoOoqmb4-X1Wxb0cY";
         var socket = io("http://127.0.0.1:5000/", {
             "force new connection": true,
             "reconnectionAttempts": "Infinity",
@@ -77,7 +77,7 @@
             "transports": ["websocket"],
             "auth": {
                 "token": jwt,
-                receiverId: 1153
+                receiverId: 1181
             },
         });
 

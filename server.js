@@ -37,15 +37,15 @@ io.use(async(socket, next) => {
     await userController.updateUserSession(socket.decoded.sub, true);
     let isRecieverOnline = await userController.checkUserSession(socket.receiverId);
 
-    socket.join(socket.senderId);
+    socket.join('room:' + socket.senderId);
     if (isRecieverOnline) {
-        socket.join(socket.receiverId);
+        socket.join('room:' + socket.receiverId);
         socket.emit('reciever online');
     }
 
     socket.on('send message', msg => {
         userController.saveMessage(msg, socket.receiverId, socket.senderId);
-        io.sockets.in([socket.receiverId, socket.senderId]).emit('recieve message', msg);
+        io.to('room:' + socket.receiverId).to('room:' + socket.senderId).emit('receive message', msg);
     });
 
     socket.on('disconnecting', () => {
